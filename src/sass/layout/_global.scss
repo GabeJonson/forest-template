@@ -17,3 +17,47 @@ figure { margin: 0; }
 }
 
 .relative { position: relative; }
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+}
+
+section {
+	padding: {
+		top: 30px;
+		bottom: 30px;
+	}
+}
+
+div.column {
+	@include flex-direction(column);
+}
+
+.position-bottom {
+	@include max-size($max-width null);
+	position: absolute;
+	bottom: 0;
+}
+
+.white-color {
+	color: $white;
+}
+
+.column {
+	@include flex-direction(column);
+}
+
+input, textarea, button {
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}

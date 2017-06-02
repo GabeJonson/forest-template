@@ -1,6 +1,84 @@
 extends layout/_main
 
 block title
-  | The title
+  | Forest
 
 block content
+  section.conainer-fluid.relative.first-container.row.middle-sm.parralax(style=`background-image: url(${imgPath}forest-bg.jpg)`)
+    .container
+      .col-xs-12.col-sm-10.relative
+        .h1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .highway-to-hell
+      a.next.relative(href='#next') scroll down
+        .come-icon
+
+  section#next.container.latest-news
+    .row.between-sm
+      .image-big.row.bottom-sm.relative(style=`background-image: url(${imgPath}first-image.jpg)`)
+        a(href="#")
+          .info-container
+            .h2.white-color.relative.col-xs-12.col-sm-12 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            .date.relative
+              i.fa.fa-clock-o.white-color  #[span 24 April 2017]
+            .comments.text-uppercase.white-color.relative comments #[span (12 000)]
+
+      .image-small.row.bottom-sm.relative(style=`background-image: url(${imgPath}second-image.jpg)`)
+        a(href="#")
+          .info-container
+            .h2.white-color.relative.col-xs-12.col-sm-12 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            .date.relative
+              i.fa.fa-clock-o.white-color  #[span 24 April 2017]
+            .comments.text-uppercase.white-color.relative comments #[span (12 000)]
+
+      .image-small.row.bottom-sm.relative(style=`background-image: url(${imgPath}third-image.jpg)`)
+        a(href="#")
+          .info-container
+            .h2.white-color.relative.col-xs-12.col-sm-12 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            .date.white-color.relative
+              i.fa.fa-clock-o.white-color  #[span 24 April 2017]
+            .comments.text-uppercase.white-color.relative comments #[span (12 000)]
+
+      .image-big.row.bottom-sm.relative(style=`background-image: url(${imgPath}fourth-image.jpg)`)
+        a(href="#")
+          .info-container
+            .h2.white-color.relative.col-xs-12.col-sm-12 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            .date.white-color.relative
+              i.fa.fa-clock-o.white-color  #[span 24 April 2017]
+            .comments.text-uppercase.white-color.relative comments #[span (12 000)]
+
+  section#service.service.container
+    .h2.text-uppercase.text-center OUR SERVICES
+    .row
+      -for(var i = 0; i < 2; i++)
+        +services('desktop')
+        +services('undo')
+        +services('globe')
+        +services('mobile')
+
+  section.container-fluid.fourth-images
+    .row
+      +imageContainer('eagle')
+      +imageContainer('racoon')
+      +imageContainer('forest')
+      +imageContainer('waterfall')
+
+  section#team.team.container
+    .row
+      +team
+      +team
+      +team
+
+  section#contact.contact.cotainer-fluid
+    .container
+      .mail-icon.relative
+      .h2.text-uppercase contact form
+      from.row.relative
+        .west-side
+          +input('Full name')
+          +input('Email address')
+          +input('Title')
+          +input('Category')
+          button(type="button").text-uppercase.btn send
+        .east-side
+          textarea

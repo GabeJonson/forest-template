@@ -1,3 +1,32 @@
 header {
-	
+  @include size(100% null);
+  padding: 54px 0;
+  position: absolute;
+  top: 0;
+  @include horizontal-center;
+  z-index: 2;
+  transition: 0.3s;
+
+  &.sticky {
+    padding: 25px 0;
+    background-color: $dark;
+    position: fixed;
+    z-index: 10;
+  }
+
+  a {
+    color: $white;
+  }
+
+  .logo-container a {
+    @include font(30px, $monteserrat, bold);
+  }
+
+  nav a {
+    @include font(16px, $lato, bold);
+
+    &:not(:nth-last-of-type(1)) {
+      margin-right: 38px;
+    }
+  }
 }

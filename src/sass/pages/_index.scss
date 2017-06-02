@@ -1,0 +1,447 @@
+.first-container {
+  @include size(100% 100vh);
+  padding-top: 138px;
+  background: {
+    size: cover;
+    position: 50% 50%;
+    repeat: no-repeat;
+    attachment: fixed;
+  }
+
+  &:after {
+    content: '';
+    @include size(100%);
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to bottom, fade-out($black, 1) 0%,$black 100%);
+  }
+
+  .relative {
+    z-index: 2;
+  }
+
+  .h1, p {
+    color: $white;
+  }
+
+  .h1 {
+    @include font(48px, $pt, bold, 1.2);
+  }
+
+  p {
+    @include font(18px, $pt, 400, 24px);
+  }
+
+  .highway-to-hell {
+    position: absolute;
+    bottom: 20px;
+    @include horizontal-center;
+    z-index: 2;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      @include size(2px 6px);
+      background-color: $white;
+      position: absolute;
+      top: -35px;
+      @include horizontal-center;
+      animation: scroll 2s linear infinite;
+    }
+
+    a {
+      @include size(100%);
+      @include font(12px, $roboto, 900);
+      color: $white;
+      display: block;
+
+      &:before {
+        content: '';
+        @include size(20px 32px);
+        background: {
+          image: url(../img/scroll-down.png);
+          size: cover;
+          repeat: no-repeat;
+          position:center;
+        }
+        position: absolute;
+        top: -40px;
+        @include horizontal-center;
+      }
+    }
+  }
+}
+
+.latest-news {
+  padding: 17px 0;
+
+  a {
+    display: block;
+
+    &:hover {
+      .date, .comments {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .image- {
+    &big {
+      @include max-size(660px null);
+    }
+
+    &small {
+      @include max-size(460px null);
+    }
+
+    &big, &small {
+      @include size(100% 300px);
+      margin-bottom: 17px;
+      padding: 0 30px;
+      background: {
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+      }
+
+      &:before {
+        content: '';
+        @include size(100%);
+        background: linear-gradient(to bottom, fade-out($black, 1) 0%,$black 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .relative {
+    z-index: 2;
+  }
+
+  .h2 {
+    @include max-size(80% null);
+    margin-bottom: 20px;
+    @include font(24px, $pt, bold);
+    color: $white;
+  }
+
+  .info-container {
+    margin-top: -30px;
+  }
+
+  .date, .comments {
+    padding-left: 15px;
+    margin-bottom: 40px;
+    @include font(12px, $ptn);
+    display: inline-block;
+    transform: translateY(200px);
+    transition: 0.3s;
+
+    span {
+      @include font(12px, $ptn);
+    }
+  }
+
+  .date {
+    @include font(12px, $pt);
+  }
+
+  .comments {
+    @include font(12px, $pt);
+    transition-delay: 0.05s;
+  }
+
+  .fa.fa-clock-o {
+    margin-right: 5px;
+  }
+}
+
+.service {
+  .h2 {
+    @include size(100% null);
+    margin-bottom: 80px;
+    @include font(24px, $ptn, bold);
+  }
+
+  .icon-container {
+    margin-right: 20px;
+    font-size: 40px;
+  }
+
+  .text-container {
+    margin-bottom: 20px;
+
+    .h3 {
+      margin: {
+        top: 5px;
+        bottom: 20px;
+      }
+      @include font(24px, $pt, bold);
+      color: $dark;
+    }
+
+    p {
+      @include font(14px, $lato);
+      color: $light;
+    }
+  }
+}
+
+.fourth-images {
+  padding: {
+    right: 0;
+    left: 0;
+  }
+
+  .image-container {
+    @include size(100% 300px);
+    padding: 0 70px;
+    background: {
+      size: cover;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      @include size(100%);
+      background-color: fade-out($black, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    .text-container {
+      z-index: 2;
+    }
+
+    .h3, p {
+      transform: translateY(-50px);
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    .h3 {
+      margin-bottom: 25px;
+      @include font(24px, $ptn);
+      transition-delay: 0.1s;
+    }
+
+    p {
+      @include font(16px, $lato, null, 1.3);
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+
+      .h3, p {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .share-button {
+        bottom: 30px;
+      }
+    }
+  }
+
+  .share-button {
+    position: absolute;
+    bottom: -50px;
+    @include horizontal-center;
+    z-index: 2;
+    transition: 0.3s;
+
+    .fa {
+      @include size(30px);
+      margin-right: 20px;
+      text-align: center;
+      line-height: 30px;
+      background-color: $white;
+      border-radius: 50%;
+    }
+  }
+}
+
+.team {
+  padding-bottom: 130px;
+
+  .hover-container {
+    @include size(230px);
+    margin: 0 auto 50px;
+    background: {
+      size: cover;
+      position: center right;
+    }
+    border-radius: 50%;
+    overflow: hidden;
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+
+      a {
+        &:nth-of-type(1) {
+          bottom: 60px;
+          left: 50px
+        }
+
+        &:nth-of-type(2) {
+          bottom: 40px;
+          @include horizontal-center;
+        }
+
+        &:nth-of-type(3) {
+          right: 50px;
+          bottom: 60px;
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      @include size(100%);
+      background-color: fade-out($black, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    a {
+      color: $black;
+      position: absolute;
+      z-index: 2;
+      transition: 0.3s;
+
+      &:nth-of-type(1) {
+        bottom: 0;
+        left: -10px;
+        transition-delay: 0.1s;
+      }
+
+      &:nth-of-type(2) {
+        bottom: -30px;
+        @include horizontal-center;
+        transition-delay: 0.2s;
+      }
+
+      &:nth-of-type(3) {
+        right: -10px;
+        bottom: 0;
+        transition-delay: 0.3s;
+      }
+
+      .fa {
+        @include size(22px);
+        font-size: 16px;
+        line-height: 22px;
+        background: $white;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .h3 {
+    margin-bottom: 15px;
+    @include font(24px, $ptn);
+    color: $dark;
+  }
+
+  span {
+    margin-bottom: 25px;
+    @include font(12px, $ptn);
+    color: $light;
+    display: block;
+  }
+
+  p {
+    padding: 0 40px;
+    @include font(14px, $lato, null, 26px);
+    color: $light;
+  }
+}
+
+.contact {
+  padding-bottom: 110px;
+  background-color: $contacts;
+  overflow: hidden;
+
+  .mail-icon:after {
+    content: '';
+    @include size(400px 288px);
+    background: {
+      image: url('../img/letter.png');
+      size: cover;
+      repeat: no-repeat;
+    }
+    position: absolute;
+    right: -70px;
+    top: 160px;
+    transform: rotate(20deg) scale(1.7);
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  form {
+    z-index: 2;
+  }
+
+  .h2 {
+    margin-bottom: 60px;
+    padding-top: 70px;
+    @include font(30px, $ptn, bold);
+  }
+
+  .west-side {
+    @include size(30% null);
+    margin-right: 10px;
+  }
+
+  .east-side {
+    @include size(69% null);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 70px;
+    }
+
+    input {
+      @include size(100% null);
+      padding: 0 20px;
+      line-height: 48px;
+      border: 1px solid lighten($light, 30%);
+    }
+  }
+
+  textarea {
+    @include size(100%);
+    border: 1px solid lighten($light, 30%);
+  }
+}
+
+@keyframes scroll {
+  from {
+    top: -30px;
+  }
+
+  50% {
+    top: -25px;
+  }
+
+  to {
+    top: -30px;
+  }
+}

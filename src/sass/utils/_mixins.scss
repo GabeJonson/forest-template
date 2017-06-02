@@ -63,3 +63,12 @@
     clear: both;
   }
 }
+
+@mixin font($size, $family, $weight: normal, $line: 1) {
+  font: {
+    family: $family;
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $line;
+}

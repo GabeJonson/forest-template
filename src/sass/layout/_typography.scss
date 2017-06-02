@@ -1,7 +1,67 @@
 // fonts
+$monteserrat: 'montserrat', sans-serif;
+$lato: 'lato', sans-serif;
+$pt: 'pt_sans', sans-serif;
+$roboto: 'roboto', sans-serif;
+$ptn: 'pt_sans_narrow', sans-serif;
 
 // font
 @each $size in $heading-sizes {
 	$key: index($heading-sizes, $size);
 	h#{$key}, .h#{$key} { font-size: rem($size); }
+}
+
+@font-face {
+	font-family: 'montserrat';
+	src: url('#{$font-path}montserrat-bold-webfont.woff2') format('woff2'),
+	     url('#{$font-path}montserrat-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lato';
+	src: url('#{$font-path}lato-bold-webfont.woff2') format('woff2'),
+	url('#{$font-path}lato-bold-webfont.woff') format('woff'),
+	url('#{$font-path}lato-bold-webfont.svg#latobold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pt_sans';
+	src: url('#{$font-path}pt_sans-web-bold-webfont.woff2') format('woff2'),
+	url('#{$font-path}pt_sans-web-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pt_sans';
+	src: url('#{$font-path}pt_sans-web-regular-webfont.woff2') format('woff2'),
+	url('#{$font-path}pt_sans-web-regular-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'roboto';
+	src: url('#{$font-path}roboto-regular-webfont.woff2') format('woff2'),
+	url('#{$font-path}roboto-regular-webfont.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pt_sans_narrow';
+	src: url('#{$font-path}PT_Sans-Narrow-Web-Regular.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pt_sans_narrow';
+	src: url('#{$font-path}PT_Sans-Narrow-Web-Bold.ttf') format('ttf');
+	font-weight: bold;
+	font-style: normal;
 }
